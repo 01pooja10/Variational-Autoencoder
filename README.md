@@ -20,7 +20,10 @@ $ python train.py
 
 This will allow you to train your model from scratch. Don't forget to experiment with the hyperparameters for achieving better results!
 Further, you can generate your own version of images that resemble the MNIST dataset by running the following line
-``` $ python inference.py ```
+``` 
+$ cd src
+$ python inference.py
+```
 
 Thanks for visiting my repository. Hope you found it informative and useful.
 
