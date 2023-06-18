@@ -47,6 +47,8 @@ for e in range(epochs):
         opt.step()
         losses.append(final_loss)
     pprint("Epoch: ",e, "Loss value:",final_loss)
+
+
+model_data = {'model': model.state_dict(),'optimizer': opt.state_dict(),'loss': losses}
+torch.save(model_data,'vae_weights.pth')
         
-        
-#print(torch.mean(losses))
