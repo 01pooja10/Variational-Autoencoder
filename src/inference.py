@@ -11,8 +11,8 @@ import torchvision.datasets as datasets
 from torch.utils.data import DataLoader
 from torchvision.utils import save_image
 
-#device = torch.device("cuda")
-device = 'cpu'
+#device = 'cpu'
+device = torch.device("cuda")
 lr = 3e-4
 inp = 784
 epochs = 1
@@ -21,12 +21,15 @@ bs = 64
 h = 200
 z = 20
 
-data = datasets.MNIST(root='data/', train=True, transform = transforms.ToTensor(), download=False)
-
+download = True
+data = datasets.MNIST(root='data/', train=True, transform = transforms.ToTensor(), download=download)
 dl = DataLoader(data, batch_size = bs, shuffle = True)
+
 model = VAE(inp, h, z).to(device)
-opt = torch.optim.Adam(model.parameters(), lr)
-loss = nn.BCELoss(reduction="sum")
+path = "path/to/model/weights.pt"
+loaded = torch.load(path)
+model.load_state_dict(loaded['model'])
+
 
 def inference(digit, egs=1):
     imgs = []
