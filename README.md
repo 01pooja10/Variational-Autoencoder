@@ -11,14 +11,14 @@ We obtain mean and variance values for all the data points after passing our inp
 ## Instructions to run
 
 To implement this repository, follow the instructions given below:
-$ git clone https://github.com/01pooja10/Variational-Autoencoder
-$ cd src
-$ python model.py
-$ python train.py
+''' $ git clone https://github.com/01pooja10/Variational-Autoencoder '''
+''' $ cd src '''
+''' $ python model.py '''
+''' $ python train.py '''
 
 This will allow you to train your model from scratch. Don't forget to experiment with the hyperparameters for achieving better results!
 Further, you can generate your own version of images that resemble the MNIST dataset by running the following line
-$ python inference.py
+''' $ python inference.py '''
 
 Thanks for visiting my repository. Hope you found it informative and useful.
 
